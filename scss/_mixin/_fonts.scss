@@ -1,0 +1,40 @@
+@font-face {
+  font-family: hiragino-w3;
+  src: url("../fonts/Hiragino-Sans-GB-W3.otf");
+}
+@font-face {
+  font-family: hiragino-w6;
+  src: url("../fonts/Hiragino-Sans-GB-W6.otf");
+}
+
+@font-face {
+  font-family: "notosans-regular";
+  src: url("../fonts/NotoSansCJKjp-Regular.otf") format('opentype');
+}
+@font-face {
+  font-family: "notosans-medium";
+  src: url("../fonts/NotoSansCJKjp-Medium.otf") format('opentype');
+}
+@font-face {
+  font-family: "notosans-bold";
+  src: url("../fonts/NotoSansCJKjp-Bold.otf") format('opentype');
+}
+
+@font-face {
+  font-family: trajanpro-bold;
+  src: url("../fonts/TrajanPro-Bold.otf") format('opentype');
+}
+
+.notosans-regular {
+  font-family: $font_notosans_regular;
+}
+.notosans-medium {
+  font-family: $font_notosans_medium;
+}
+.notosans-bold {
+  font-family: $font_notosans_bold;
+}
+
+.trajanpro-bold {
+  font-family: $font_trajanpro_bold;
+}

@@ -1,0 +1,8 @@
+.committee-content {
+  .committee-date {
+    text-align: right;
+    margin-bottom: 8px;
+    font-family: $font_notosans_bold;
+    @include fontsize(15);
+  }
+}

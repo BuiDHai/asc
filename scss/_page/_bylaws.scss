@@ -1,0 +1,95 @@
+.document-items {
+  line-height: (19.2/16);
+  &:not(.document-items-column) {
+    .item {
+      +.item {
+        margin-top: 30px;
+      }
+    }
+  }
+  &.document-items-column {
+    @include flexbox;
+    @include flex-flow(row wrap);
+  }
+}
+.document-link {
+  display: table;
+  position: relative;
+  padding-left: 30px;
+  font-family: $font_notosans_medium;
+  .icon {
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  span {
+    display: block;
+    text-decoration: underline;
+  }
+  small {
+    @include fontsize(12);
+    color: $color_secondary;
+  }
+  &:hover {
+    text-decoration: none;
+  }
+}
+.bylaws-content .document-info {
+  font-family: $font_notosans_regular;
+}
+
+@media ( min-width: 1024px ) {
+  .document-items {
+    &.document-items-column {
+      .item {
+        width: calc((100% - 60px) / 3);
+        margin-bottom: 30px;
+        +.item {
+          margin-top: 0;
+        }
+        &:not(:nth-child(3n)) {
+          margin-right: 30px;
+        }
+      }
+    }
+  }
+}
+
+@media ( max-width: 1023px ) and ( min-width: 768px ) {
+  .document-items {
+    &.document-items-column {
+      .item {
+        width: calc((100% - 30px) / 2);
+        margin-bottom: 30px;
+        +.item {
+          margin-top: 0;
+        }
+        &:not(:nth-child(2n)) {
+          margin-right: 30px;
+        }
+      }
+    }
+  }
+}
+
+@media ( max-width: 767px ) {
+  .document-items {
+    &.document-items-column {
+      .item {
+        width: 100%;
+        +.item {
+          margin-top: 40px;
+        }
+      }
+    }
+  }
+}
+
+@media ( max-width: 767px ) and ( min-width: 521px ) {
+  .document-info, .document-items {
+    @include fontsize(20);
+  }
+}

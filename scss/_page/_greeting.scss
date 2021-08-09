@@ -1,0 +1,49 @@
+.greeting-content {
+  font-family: $font_notosans_regular;
+  .user {
+    @include flexbox;
+    margin-bottom: 40px;
+    &.align-end {
+      @include align-items(flex-end);
+    }
+    .user-avatar {
+      width: 150px;
+      margin-right: 30px;
+    }
+    .user-info {
+      flex: auto;
+      &__text {
+        margin-bottom: 10px;
+        line-height: (21/16);
+      }
+      &__name {
+        margin-bottom: 0;
+        line-height: 1.2;
+      }
+    }
+  }
+}
+
+@media ( max-width: 767px ) and ( min-width: 521px ) {
+  .greeting-content {
+    @include fontsize(20);
+    .user {
+      .user-info__name {
+        @include fontsize(30);
+      }
+    }
+  }
+}
+
+@media ( max-width: 520px ) {
+  .greeting-content {
+    .user {
+      @include flex-flow(row wrap);
+      text-align: center;
+      .user-avatar {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

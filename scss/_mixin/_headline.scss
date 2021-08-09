@@ -1,0 +1,64 @@
+h1, h2, h3, h4, h5, h6 {
+  color: $color_text_title;
+}
+
+h1 {
+  @include fontsize(23);
+}
+
+.page-title {
+  font-family: $font_notosans_bold;
+  background: $color_primary;
+  padding: 14px 0;
+  margin-bottom: 40px;
+  h1 {
+    max-width: 970px;
+    color: $color_white;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+}
+
+h2 {
+  @include fontsize(25);
+}
+
+h3 {
+  @include fontsize(20);
+}
+
+h4 {
+  @include fontsize(16);
+}
+
+@media ( max-width: 1023px ) and ( min-width: 768px ) {
+  h2 {
+    @include fontsize(20);
+  }
+}
+
+@media ( max-width: 767px ) {
+  .page-title {
+    margin-bottom: 60px;
+    padding: 20px 0;
+    h1 {
+      text-align: center;
+    }
+  }
+}
+
+@media ( max-width: 767px ) and ( min-width: 521px ) {
+  .page-title {
+    h1 {
+      @include fontsize(30);
+    }
+  }
+}
+
+@media ( max-width: 520px ) {
+  .page-title {
+    h1 {
+      @include fontsize(28);
+    }
+  }
+}

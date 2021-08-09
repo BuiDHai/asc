@@ -1,0 +1,29 @@
+$color_primary: #007E9D;
+$color_secondary: #968668;
+$color_text: #000000;
+$color_white: #fff;
+$nav_link: $color_white;
+$nav_link_hover: #004555;
+$color_fnav: #737373;
+$color_fnav_hover: #004555;
+$color_copyright: #373737;
+
+$body_bg: $color_white;
+$header_bg: $color_primary;
+$footer_bg: $color_white;
+
+$color_text_title: $color_text;
+$color_link: $color_text;
+$color_link_hover: $color_primary;
+
+$table_th_bg: $color_secondary;
+$table_th_color: $color_white;
+$table_td_bg: #E9E5DE;
+$table_td_color: $color_text;
+
+.color_primary {
+    color: $color_primary !important;
+}
+.color_white {
+    color: $color_white !important;
+}

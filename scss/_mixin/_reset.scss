@@ -1,0 +1,264 @@
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+}
+body {
+  font-family: $font_default;
+  @include fontsize($font_size);
+  color: $color_text;
+  line-height: 1.65;
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+p {
+  margin: 0;
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+
+a {
+  @include transition(0.3s);
+  color: $color_link;
+  &:hover {
+    color: $color_link_hover;
+  }
+}
+
+.form-check {
+  position: relative;
+  padding: 0;
+  .form-check-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    margin: 0;
+    &:checked {
+      +.form-check-label {
+        &:before {
+          opacity: 1;
+        }
+        &:after {
+          border-color: $color_primary;
+          background: $color_primary;
+        }
+      }
+    }
+  }
+  .form-check-label {
+    position: relative;
+    padding-left: 25px;
+    &:after, &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
+      @include transition(0.3s);
+    }
+    &:before {
+      content: '✓';
+      font-size: 16px;
+      color: #fff;
+      left: 6px;
+      z-index: 2;
+      opacity: 0;
+    }
+    &:after {
+      width: 24px;
+      height: 24px;
+      border: 1px solid $color_link;
+      border-radius: 5px;
+      left: 0;
+    }
+  }
+}
+
+.map-container {
+  position: relative;
+  height: 100%;
+  iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  @media ( max-width: 767px ) {
+    padding-top: 70%;
+  }
+}
+
+.wow {
+  visibility: hidden;
+}
+
+.mCSB_inside {
+  >.mCSB_container {
+    margin-right: 15px;
+  }
+}
+.mCS-dark {
+  &.mCSB_scrollTools {
+    opacity: 1;
+    .mCSB_draggerContainer {
+      left: auto;
+      right: 0;
+      width: 9px;
+      background: #DADADA;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .mCSB_draggerRail {
+      background: #DADADA;
+      width: 9px;
+    }
+    .mCSB_dragger {
+      .mCSB_dragger_bar {
+        width: 9px;
+        border-radius: 5px;
+      }
+    }
+  }
+}
+
+.navbar {
+  .mCS-dark {
+    &.mCSB_scrollTools {
+      .mCSB_dragger {
+        .mCSB_dragger_bar {
+          background-image: linear-gradient(to bottom, #99896B, #594F30);
+        }
+        .mCSB_dragger_onDrag {
+          .mCSB_dragger_bar {
+            background: $color_white;
+          }
+        }
+      }
+    }
+  }
+}
+.mCustomScrollPrimary {
+  .mCS-dark {
+    &.mCSB_scrollTools {
+      .mCSB_dragger {
+        .mCSB_dragger_bar {
+          background: $color_primary !important;
+        }
+      }
+    }
+  }
+}
+
+main {
+  margin-bottom: 130px;
+}
+
+.page-to-top {
+  display: block;
+  position: fixed;
+  right: 10px;
+  bottom: 30px;
+  width: 50px;
+  height: 50px;
+  background: $color_white;
+  border: 2px solid $color_primary;
+  border-radius: 5px;
+  z-index: 8;
+  padding-bottom: env(safe-area-inset-bottom);
+  -webkit-overflow-scrolling: touch;
+  &:after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-top: 2px solid $color_primary;
+    border-right: 2px solid $color_primary;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+}
+
+@function vw($target, $breakpoint) {
+	$vw: (($breakpoint / 1px) * 0.01);
+	@return (($target / 1px) / $vw) * 1vw;
+}
+
+@media ( min-width: 768px ) {
+  body {
+    @include flexbox;
+    @include flex-direction(column);
+    min-height: 100vh;
+    footer {
+      margin-top: auto;
+    }
+  }
+  .sp-only {
+    display: none;
+  }
+}
+
+@media ( min-width: 1024px ) {
+  main, footer {
+    padding-left: $header_width_pc+px;
+  }
+}
+
+@media ( max-width: 1023px ) and ( min-width: 768px ) {
+  body {
+    @include fontsize($font_size - 1);
+  }
+  main, footer {
+    padding-left: $header_width_tb+px;
+  }
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding: 0 25px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 970px;
+    padding: 0 25px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 990px;
+    padding: 0 25px;
+  }
+}
+
+@media ( max-width: 767px ) {
+  .pc-only {
+    display: none;
+  }
+  body {
+    &.body-hidden {
+      overflow: hidden;
+    }
+  }
+  .container {
+    padding: 0 vw(25, 767);
+  }
+}

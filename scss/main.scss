@@ -1,0 +1,39 @@
+$font_default: notosans-medium, sans-serif;
+
+$font_notosans_regular: notosans-regular, sans-serif;
+$font_notosans_medium: notosans-medium, sans-serif;
+$font_notosans_bold: notosans-bold, sans-serif;
+
+$font_trajanpro_bold: trajanpro-bold, sans-serif;
+
+$font_size: 16;
+
+$header_width_pc: 215;
+$header_width_tb: 180;
+
+$logo_height_pc: 226;
+$logo_height_tb: 190;
+
+$logo_img_width_pc: 167;
+$logo_img_width_tb: 140;
+
+$logo_img_height_pc: 186;
+$logo_img_height_tb: 156;
+
+@import "_mixin/fonts";
+@import "_mixin/base";
+@import "_mixin/color";
+@import "_mixin/reset";
+@import "_mixin/headline";
+@import "_mixin/button";
+@import "_mixin/table";
+@import "_components/header";
+@import "_other/search";
+@import "_components/footer";
+
+@import "_components/banner";
+@import "_page/home";
+@import "_page/greeting";
+@import "_page/bylaws";
+@import "_page/committee";
+@import "_page/event";
